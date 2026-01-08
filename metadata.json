@@ -1,0 +1,9 @@
+{
+  "name": "LUMI",
+  "description": "Illuminate the path to learning. An AI-powered education platform with Dark Academia aesthetics, offering personalized courses, social learning, and immersive AI experiences.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

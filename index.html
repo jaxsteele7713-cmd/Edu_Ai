@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMI - Illuminate Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              da: { // Theme Palette (Variables mapped for dynamic switching)
+                bg: 'var(--da-bg)',
+                paper: 'var(--da-paper)',
+                text: 'var(--da-text)',
+                accent: 'var(--da-accent)',
+                gold: 'var(--da-gold)',
+                leather: 'var(--da-leather)',
+                red: 'var(--da-red)',
+                subtle: 'var(--da-subtle)'
+              }
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['"Inter"', 'sans-serif'],
+              display: ['"Cinzel"', 'serif'],
+            },
+            animation: {
+              'page-turn': 'pageTurn 1s ease-in-out forwards',
+              'float': 'float 20s infinite linear',
+            },
+            keyframes: {
+              pageTurn: {
+                '0%': { transform: 'rotateY(0deg)', transformOrigin: 'left' },
+                '100%': { transform: 'rotateY(-180deg)', transformOrigin: 'left' },
+              },
+              float: {
+                '0%': { transform: 'translate(0, 0) opacity(0)' },
+                '20%': { opacity: '0.4' },
+                '80%': { opacity: '0.4' },
+                '100%': { transform: 'translate(100px, -100px) opacity(0)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <style>
+      :root {
+        /* Default: Dark Academia Colors */
+        --da-bg: #1e1e1e;
+        --da-paper: #2a2a2a;
+        --da-text: #d3c6aa;
+        --da-accent: #7f9c96;
+        --da-gold: #cfaa6e;
+        --da-leather: #121212; /* Desk Background */
+        --da-red: #5e2a2a;
+        --da-subtle: rgba(255, 255, 255, 0.05);
+      }
+
+      .la-theme {
+        /* Light Academia Overrides - High Contrast */
+        --da-bg: #f4f1ea; /* Creamy background */
+        --da-paper: #ffffff; /* Pure white paper */
+        --da-text: #1a1a1a; /* Near black text for max visibility */
+        --da-accent: #4a6761; /* Darker sage */
+        --da-gold: #8c6b30; /* Darker gold/bronze for visibility on white */
+        --da-leather: #e6e0d4; /* Light wood desk */
+        --da-red: #8a4b4b;
+        --da-subtle: rgba(0, 0, 0, 0.05);
+      }
+
+      /* Custom scrollbar for academia feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--da-bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--da-gold);
+        border-radius: 4px;
+        opacity: 0.5;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      body {
+        background-color: var(--da-leather);
+        color: var(--da-text);
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="overflow-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
